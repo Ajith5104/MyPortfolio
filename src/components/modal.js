@@ -174,7 +174,6 @@ const Modal = ({ isOpen, closeModal }) => {
       <ModalOverlay />
       <ModalWrapper>
         <ModalContent>
-          {/* Info Icon with Tooltip */}
           <InfoIconWrapper>
             <InfoIcon />
             <InfoTooltip>

@@ -172,7 +172,7 @@ export const education = [
     school:
       "Dr.R.K. Shanmugam college of arts and science  Affiliated Annamalai University",
     date: "2022-2024",
-    grade: "Pursuing",
+    grade: "79%",
     desc: "",
     degree: "Master of Computer Science",
   },
@@ -182,7 +182,7 @@ export const education = [
     school:
       "Dr.R.K. Shanmugam college of arts and science Affiliated Thiruvalluvar University",
     date: "2019-2022",
-    grade: "7.88",
+    grade: "84%",
     desc: "",
     degree: "Bachelor of Computer Science",
   },

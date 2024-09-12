@@ -1,7 +1,6 @@
-
-import React, { useRef, useState } from 'react';
-import styled from 'styled-components';
-import { Snackbar, Alert } from '@mui/material';
+import React, { useRef, useState } from "react";
+import styled from "styled-components";
+import { Snackbar, Alert } from "@mui/material";
 
 const Container = styled.div`
   display: flex;
@@ -106,9 +105,21 @@ const ContactButton = styled.button`
   text-decoration: none;
   text-align: center;
   background: hsla(271, 100%, 50%, 1);
-  background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-  background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
+  background: linear-gradient(
+    225deg,
+    hsla(271, 100%, 50%, 1) 0%,
+    hsla(294, 100%, 50%, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    225deg,
+    hsla(271, 100%, 50%, 1) 0%,
+    hsla(294, 100%, 50%, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    225deg,
+    hsla(271, 100%, 50%, 1) 0%,
+    hsla(294, 100%, 50%, 1) 100%
+  );
   padding: 13px 16px;
   margin-top: 2px;
   border-radius: 12px;
@@ -138,7 +149,6 @@ const CustomSnackbar = styled(Snackbar)`
   border-radius: 12px; /* Added border-radius */
 `;
 
-
 export default function Contact() {
   const [result, setResult] = useState("");
   const [buttonText, setButtonText] = useState("Send");
@@ -146,32 +156,30 @@ export default function Contact() {
   const speakSuccessMessage = (userName) => {
     const message = `Hey ${userName}, your email sent successfully. Have a good day.`;
     const utterance = new SpeechSynthesisUtterance(message);
-    utterance.lang = "en-IN"; // Set Indian accent
+    utterance.lang = "en-IN";
     speechSynthesis.speak(utterance);
   };
-  
+
   const onSubmit = async (event) => {
     event.preventDefault();
     setButtonText("Sending...");
     const formData = new FormData(event.target);
-  
+
     formData.append("access_key", "5f9c3e60-1613-4794-8673-a21147099627");
-  
+
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: formData
+      body: formData,
     });
-  
+
     const data = await response.json();
-  
+
     if (data.success) {
-      // Retrieve user's name from the form input
       const userName = formData.get("name");
-      
-      // Update success message to include the user's name
+
       setResult(`Thanks for contacting, ${userName}!`);
-      
-      speakSuccessMessage(userName); // Pass userName to the function
+
+      speakSuccessMessage(userName);
       setButtonText("Thanks for contacting");
       event.target.reset();
     } else {
@@ -180,27 +188,39 @@ export default function Contact() {
       setButtonText("Send");
     }
   };
-  
 
   const handleAlertClose = () => {
     setResult("");
-    setButtonText("Send"); // Reset button text when Snackbar closes
+    setButtonText("Send");
   };
 
   return (
-    <Container  id="contact">
+    <Container id="contact">
       <Wrapper>
         <Title>Contact</Title>
-        <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
+        <Desc>
+          Feel free to reach out to me for any questions or opportunities!
+        </Desc>
         <ContactForm ref={form} onSubmit={onSubmit}>
           <ContactTitle>Email Me 🚀</ContactTitle>
           <ContactInput placeholder="Your Email" name="email" required />
           <ContactInput placeholder="Your Name" name="name" required />
           <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" required />
-          <ContactButton type="submit" disabled={buttonText === "Sending..."}>{buttonText}</ContactButton>
+          <ContactInputMessage
+            placeholder="Message"
+            rows="4"
+            name="message"
+            required
+          />
+          <ContactButton type="submit" disabled={buttonText === "Sending..."}>
+            {buttonText}
+          </ContactButton>
         </ContactForm>
-        <CustomSnackbar open={result !== ""} autoHideDuration={5000} onClose={handleAlertClose}>
+        <CustomSnackbar
+          open={result !== ""}
+          autoHideDuration={5000}
+          onClose={handleAlertClose}
+        >
           <AlertWrapper>
             <Alert onClose={handleAlertClose} variant="filled" severity="info">
               {result}
@@ -211,5 +231,3 @@ export default function Contact() {
     </Container>
   );
 }
-
-

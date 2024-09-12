@@ -6,10 +6,9 @@ import MailIcon from "@mui/icons-material/Mail";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import GitHubIcon from "@mui/icons-material/GitHub"; // Import GitHub Icon
+import GitHubIcon from "@mui/icons-material/GitHub"; 
 import { Bio } from "../../data/constants";
 
-// Styled custom Tooltip
 const CustomTooltip = styled(Tooltip)`
   && {
     font-size: 1.6rem;
@@ -116,31 +115,31 @@ const YourComponent = () => {
           <NavLink href="#education">Education</NavLink>
         </Nav>
         <SocialMediaIcons>
-          {/* Phone Icon with Custom Tooltip */}
+
           <CustomTooltip title="Phone" arrow>
             <SocialMediaIcon href={Bio.phone} target="display">
               <PhoneIcon />
             </SocialMediaIcon>
           </CustomTooltip>
-          {/* Email Icon with Custom Tooltip */}
+
           <CustomTooltip title="Email" arrow>
             <SocialMediaIcon href={Bio.email} target="display">
               <MailIcon />
             </SocialMediaIcon>
           </CustomTooltip>
-          {/* LinkedIn Icon with Custom Tooltip */}
+
           <CustomTooltip title="LinkedIn" arrow>
             <SocialMediaIcon href={Bio.linkedin} target="display">
               <LinkedInIcon />
             </SocialMediaIcon>
           </CustomTooltip>
-          {/* Instagram Icon with Custom Tooltip */}
+
            <CustomTooltip title="Instagram" arrow>
             <SocialMediaIcon href={Bio.insta} target="display">
               <InstagramIcon />
             </SocialMediaIcon>
           </CustomTooltip>
-          {/* WhatsApp Icon with Custom Tooltip */}
+
           <CustomTooltip title="WhatsApp" arrow>
             <SocialMediaIcon
               href="#"
@@ -150,7 +149,7 @@ const YourComponent = () => {
               <WhatsAppIcon />
             </SocialMediaIcon>
           </CustomTooltip>
-          {/* GitHub Icon with Custom Tooltip */}
+
           <CustomTooltip title="GitHub" arrow>
             <SocialMediaIcon
               href="https://github.com/Ajith5104"
@@ -160,7 +159,7 @@ const YourComponent = () => {
             </SocialMediaIcon>
           </CustomTooltip>
         </SocialMediaIcons>
-        <Copyright>&copy; 2024 Ajith. All rights reserved.</Copyright>
+        <Copyright>&copy; 2024 Ajith M. All rights reserved.</Copyright>
       </FooterWrapper>
     </FooterContainer>
   );

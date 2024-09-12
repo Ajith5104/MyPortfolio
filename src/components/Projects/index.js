@@ -62,12 +62,6 @@ const Projects = ({ openModal, setOpenModal }) => {
               WEBSITE
             </ToggleButton>
           )}
-          {/* <Divider /> */}
-          {/* {toggle === 'landing pages' ?
-            <ToggleButton active value="landing pages" onClick={() => setToggle('landing pages')}>LANDING PAGE</ToggleButton>
-            :
-            <ToggleButton value="landing pages" onClick={() => setToggle('landing pages')}>LANDING PAGE</ToggleButton>
-          } */}
         </ToggleButtonGroup>
         <CardContainer>
           {toggle === "all" &&
