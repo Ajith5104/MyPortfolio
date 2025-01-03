@@ -11,7 +11,7 @@ export const Bio = {
     "Motivated Computer Science graduate with a passionfor web development and proficiency in React.JS. Seeking an entry level position as a Full Stack Developer to leverage my skills and contribute to building dynamic and responsive web applications.",
   github: "https://github.com/Ajith5104",
   resume:
-    "https://drive.google.com/file/d/1NRu7maycXtmFXmC-z0MGTj-AkKtqHCcf/view?usp=sharing",
+    "https://drive.google.com/file/d/1-C7N0wz31n4rmn8qeu2wOD6CConIwx_9/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/ajithkumar22/",
   email: "mailto:ajithkumar51046@gmail.com",
   insta: "https://www.instagram.com/ajithtechy22/",
